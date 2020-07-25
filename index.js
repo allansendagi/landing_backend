@@ -63,13 +63,10 @@ router.post('/send', (req, res, next) => {
 })
 
 const app = express()
-app.use(cors({
-    origin: "https://allansendagi.github.io/landing_page/", // restrict calls to those this address
-    methods: "POST" // only allow post requests
-}))
+app.use(cors())
 app.use(express.json())
 app.use('/', router)
-app.listen("landing-backend-six.vercel.app")
+app.listen("https://allansendagi.github.io/landing_page/")
 
 
 
