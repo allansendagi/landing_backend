@@ -4,8 +4,6 @@ var nodemailer = require('nodemailer');
 var cors = require('cors');
 const creds = require('./config');
 
-res.setHeader("Access-Control-Allow-Headers", "X-Requested-With, content-type");
-
 var transport = {
     host: 'smtp.gmail.com',
     port: 587,
@@ -68,7 +66,7 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 app.use('/', router)
-app.listen("https://landing-backend-m1doai1s6.vercel.app")
+app.listen("landing-backend-six.vercel.app")
 
 
 
