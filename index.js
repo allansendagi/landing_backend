@@ -13,6 +13,17 @@ var transport = {
   }
 }
 
+var whitelist = [' https://allansendagi.github.io/landing_page/']
+var corsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  }
+}
+
 var transporter = nodemailer.createTransport(transport)
 
 transporter.verify((error, success) => {
@@ -62,10 +73,10 @@ router.post('/send', (req, res, next) => {
   })
 })
 
-const app = express()
-app.use(cors())
-app.use(express.json())
-app.use('/', router)
+const app = express();
+app.use(cors(corsOptions));
+app.use(express.json());
+app.use('/', router);
 app.listen("https://landing-backend-dz6dzjm03.vercel.app")
 
 
