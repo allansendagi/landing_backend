@@ -4,6 +4,8 @@ var nodemailer = require('nodemailer');
 var cors = require('cors');
 const creds = require('./config');
 
+res.setHeader("Access-Control-Allow-Headers", "X-Requested-With, content-type");
+
 var transport = {
     host: 'smtp.gmail.com',
     port: 587,
