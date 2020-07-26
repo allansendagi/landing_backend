@@ -67,7 +67,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use('/', router);
-app.listen("landing-backend-hzuhx4q95.vercel.app")
+app.listen(process.env.PORT || 3002, ()=> {
+  console.log(`app is running on ${process.env.PORT}`)
+})
 
 
 
