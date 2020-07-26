@@ -67,7 +67,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use('/', router);
-app.listen("https://landing-backend-hzuhx4q95.vercel.app")
+app.listen("landing-backend-hzuhx4q95.vercel.app")
 
 
 
