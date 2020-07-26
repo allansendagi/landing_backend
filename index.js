@@ -67,7 +67,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use('/', router);
-app.listen("http://localhost:3000/landing_page")
+app.listen("3000, "0.0.0.0")
 
 
 
